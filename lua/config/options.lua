@@ -14,7 +14,8 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
 vim.opt.formatoptions = 'jcroqlnt'
 
-vim.opt.tabstop = 2 -- Number of spaces tabs count for
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 vim.opt.undofile = true
 vim.opt.swapfile = false
