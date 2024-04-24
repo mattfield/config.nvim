@@ -6,6 +6,7 @@ return {
       ensure_installed = {
         'bash',
         'cue',
+        'diff',
         'go',
         'gomod',
         'gowork',

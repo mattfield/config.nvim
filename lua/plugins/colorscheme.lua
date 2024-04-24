@@ -6,8 +6,12 @@ return {
     opts = {
       variant = 'moon',
       dark_variant = 'moon',
-      dim_inactive_windows = true,
+      dim_inactive_windows = false,
       extend_background_behind_borders = false,
+      enable = {
+        terminal = true,
+        legacy_highlights = false,
+      },
     },
     init = function()
       vim.cmd.colorscheme 'rose-pine'
