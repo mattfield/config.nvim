@@ -111,11 +111,11 @@ return {
           },
         },
         terraformls = {
-          settings = {
-            terraform = {
-              validation = {
-                enableEnhancedValidation = false,
-              },
+          -- the settings configuration option uses the workspace/didChangeConfiguration event, which is not supported by terraform-ls
+          -- so we have to use `init_options` instead
+          init_options = {
+            validation = {
+              enableEnhancedValidation = false,
             },
           },
         },
@@ -134,13 +134,13 @@ return {
                 vendor = true,
               },
               hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
+                assignVariableTypes = false,
+                compositeLiteralFields = false,
+                compositeLiteralTypes = false,
+                constantValues = false,
+                functionTypeParameters = false,
+                parameterNames = false,
+                rangeVariableTypes = false,
               },
               analyses = {
                 fieldalignment = true,
@@ -153,7 +153,7 @@ return {
               completeUnimported = true,
               staticcheck = true,
               directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
-              semanticTokens = true,
+              semanticTokens = false,
             },
           },
         },
@@ -193,7 +193,7 @@ return {
         'stylua',
         'cueimports',
         'shfmt',
-        'goimports',
+        'goimports-reviser',
         'gofumpt',
         'gomodifytags',
         'impl',

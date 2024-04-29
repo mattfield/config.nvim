@@ -15,7 +15,7 @@ return {
     },
     init = function()
       vim.cmd.colorscheme 'rose-pine'
-      vim.cmd.hi 'Comment gui=none'
+      vim.cmd.hi 'NonText guifg=#232136'
     end,
   },
 }

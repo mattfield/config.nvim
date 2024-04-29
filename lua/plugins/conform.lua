@@ -26,6 +26,11 @@ return {
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+      formatters = {
+        ['goimports-reviser'] = {
+          prepend_args = { '-rm-unused', '-set-alias' },
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         cue = { 'cueimports' },
