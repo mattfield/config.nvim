@@ -1,8 +1,18 @@
 return {
   'nvim-lualine/lualine.nvim',
-  event = 'ColorScheme',
-  opts = function()
-    return {
+  event = { 'BufReadPost', 'BufNewFile', 'VeryLazy' },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = function()
+    local trouble = require 'trouble'
+    local symbols = trouble.statusline {
+      mode = 'lsp_document_symbols',
+      groups = {},
+      title = false,
+      filter = { range = true },
+      format = '{kind_icon}{symbol.name:Normal}',
+    }
+
+    require('lualine').setup {
       options = {
         icons_enabled = true,
         theme = 'rose-pine-alt',
@@ -38,7 +48,7 @@ return {
             separator = { left = '', right = '' },
           },
         },
-        lualine_c = {
+        lualine_c = table.insert({
           {
             'diagnostics',
             separator = { left = '', right = '' },
@@ -46,7 +56,10 @@ return {
           {
             'filename',
           },
-        },
+        }, {
+          symbols.get,
+          cond = symbols.has,
+        }),
         lualine_x = { 'filesize' },
         lualine_y = {
           {
