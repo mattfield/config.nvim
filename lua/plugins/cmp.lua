@@ -1,6 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
+    version = false,
     event = 'InsertEnter',
     dependencies = {
       {
@@ -73,6 +74,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'treesitter' },
         }, {
           { name = 'buffer' },
         }),
