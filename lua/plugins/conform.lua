@@ -1,7 +1,6 @@
 return {
   {
     'stevearc/conform.nvim',
-    lazy = false,
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     keys = {
@@ -27,8 +26,8 @@ return {
         }
       end,
       formatters = {
-        ['goimports-reviser'] = {
-          prepend_args = { '-rm-unused', '-set-alias' },
+        goimports_reviser = {
+          prepend_args = { '-rm-unused', '-set-alias', '-use-cache' },
         },
       },
       formatters_by_ft = {
@@ -38,7 +37,7 @@ return {
         tf = { 'terraform_fmt' },
         ['terraform-vars'] = { 'terraform_fmt' },
         sh = { 'shfmt' },
-        go = { 'goimports', 'gofumpt' },
+        go = { 'goimports-reviser' },
       },
     },
   },
