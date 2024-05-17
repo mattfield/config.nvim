@@ -122,7 +122,7 @@ return {
         gopls = {
           settings = {
             gopls = {
-              gofumpt = true,
+              gofumpt = false,
               codelenses = {
                 gc_details = false,
                 generate = true,
@@ -153,7 +153,7 @@ return {
               completeUnimported = true,
               staticcheck = true,
               directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
-              semanticTokens = false,
+              semanticTokens = true,
             },
           },
         },
@@ -197,6 +197,7 @@ return {
         'gofumpt',
         'gomodifytags',
         'impl',
+        'kcl',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
