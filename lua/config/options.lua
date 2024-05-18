@@ -44,6 +44,4 @@ vim.opt.cursorline = true
 
 vim.opt.scrolloff = 10
 
-vim.opt.termguicolors = true -- True color support
-
--- vim: ts=2 sts=2 sw=2 et
+vim.opt.termguicolors = false
