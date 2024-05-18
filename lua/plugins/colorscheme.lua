@@ -10,7 +10,18 @@ return {
       extend_background_behind_borders = false,
       enable = {
         terminal = true,
-        legacy_highlights = false,
+        legacy_highlights = true,
+      },
+      styles = {
+        bold = true,
+        italic = true,
+        transparency = false,
+      },
+      groups = {
+        border = 'pine',
+      },
+      highlight_groups = {
+        CmpWinBorder = { fg = 'overlay', bg = 'base' },
       },
     },
     init = function()
@@ -19,4 +30,3 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et

@@ -119,44 +119,43 @@ return {
             },
           },
         },
-        gopls = {
-          settings = {
-            gopls = {
-              gofumpt = false,
-              codelenses = {
-                gc_details = false,
-                generate = true,
-                regenerate_cgo = true,
-                run_govulncheck = true,
-                test = true,
-                tidy = true,
-                upgrade_dependency = true,
-                vendor = true,
-              },
-              hints = {
-                assignVariableTypes = false,
-                compositeLiteralFields = false,
-                compositeLiteralTypes = false,
-                constantValues = false,
-                functionTypeParameters = false,
-                parameterNames = false,
-                rangeVariableTypes = false,
-              },
-              analyses = {
-                fieldalignment = true,
-                nilness = true,
-                unusedparams = true,
-                unusedwrite = true,
-                useany = true,
-              },
-              usePlaceholders = true,
-              completeUnimported = true,
-              staticcheck = true,
-              directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
-              semanticTokens = true,
-            },
-          },
-        },
+        gopls = {},
+        -- settings = {
+        --   gopls = {
+        --     gofumpt = false,
+        --     codelenses = {
+        --       gc_details = false,
+        --       generate = true,
+        --       regenerate_cgo = true,
+        --       run_govulncheck = true,
+        --       test = true,
+        --       tidy = true,
+        --       upgrade_dependency = true,
+        --       vendor = true,
+        --     },
+        --     hints = {
+        --       assignVariableTypes = false,
+        --       compositeLiteralFields = false,
+        --       compositeLiteralTypes = false,
+        --       constantValues = false,
+        --       functionTypeParameters = false,
+        --       parameterNames = false,
+        --       rangeVariableTypes = false,
+        --     },
+        --     analyses = {
+        --       fieldalignment = true,
+        --       nilness = true,
+        --       unusedparams = true,
+        --       unusedwrite = true,
+        --       useany = true,
+        --     },
+        --     usePlaceholders = true,
+        --     completeUnimported = true,
+        --     staticcheck = true,
+        --     directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
+        --     semanticTokens = true,
+        --   },
+        -- },
         lua_ls = {
           settings = {
             Lua = {
@@ -186,8 +185,6 @@ return {
 
       require('mason').setup()
 
-      -- You can add other tools here that you want Mason to install
-      -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
@@ -216,4 +213,3 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
