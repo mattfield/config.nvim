@@ -78,6 +78,7 @@ return {
       local servers = {
         cuelsp = {},
         bashls = {},
+        rust_analyzer = {},
         yamlls = {
           -- Have to add this for yamlls to understand that we support line folding
           capabilities = {
@@ -196,6 +197,7 @@ return {
         'gomodifytags',
         'impl',
         'kcl',
+        'rust-analyzer',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
